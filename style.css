@@ -1,24 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 :root {
-    --background-1: #FFFFFF;
-    --accent-1: #485C11;
-    --accent-2: #DFECC6;
-    --accent-3: #8E9C78;
-    --accent-4: #000000;
-    --accent-5: #6F6F6F;
-    --accent-6: #929292;
-    --headline: #000000;
-    --paragraph: #000000;
-    --caption: #485C11;
-    --link: #000000;
-    --on-accent-1: #FFFFFF;
-    --divider: #E9E9E9;
+  --clr-background-1: #FFFFFF;
 
-    --ff-primary: "Crimson Text", serif;
-    --ff-secondary: 'DM Sans', sans-serif;
-    --ff-accent: 'Roboto Mono', monospace;
+  --clr-accent-1: #485C11;
+  --clr-accent-2: #DFECC6;
+  --clr-accent-3: #8E9C78;
+  --clr-accent-4: #000000;
+  --clr-accent-5: #6F6F6F;
+  --clr-accent-6: #929292;
+
+  --clr-headline: #000000;
+  --clr-paragraph: #000000;
+  --clr-caption: #485C11;
+  --clr-link: #000000;
+  --clr-on-accent-1: #FFFFFF;
+
+  --clr-divider: #E9E9E9;
+
+  --ff-crimson-text: "Crimson Text", serif;
+  --ff-dm-sans: "DM Sans", sans-serif;
+  --ff-roboto-mono: "Roboto Mono", monospace;
+
+  --fs-900: 4.75rem;
+  --fs-800: 4rem;
+  --fs-700: 3.125rem;
+  --fs-500: 2rem;
+  --fs-400: 1.125rem;
+  --fs-300: 0.9375rem;
+  --fs-200: 0.875rem;
+  --fs-100: 0.75rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
 }
+
+@media (min-width: 50rem) {
+  :root{
+    --fs-900: 8.75rem;
+    --fs-800: 5rem;
+    --fs-700: 3.75rem;
+    --fs-500: 2.5rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  :root{
+    --fs-900: 10rem;
+    --fs-800: 5rem;
+    --fs-700: 3.75rem;
+    --fs-500: 2.5rem;
+  }
+}
+
 
 /* Box sizing rules */
 *,
@@ -54,6 +89,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  padding: 0 2.5rem 1.25rem;
 }
 
 /* A elements that don't have a class get default styles */
@@ -72,7 +108,7 @@ svg {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
   
   *,
@@ -83,4 +119,304 @@ svg {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+.whole-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  height: 9.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.625rem 0 0 0;
+}
+
+.nav-bar, main {
+  max-width: 93.75rem;
+  flex-grow: 1;
+}
+
+.nav-bar ul {
+  display: flex;
+  gap: 1.6875rem;
+}
+
+.logo {
+  font-family: var(--ff-dm-sans);
+  font-size: 30px;
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+  color: var(--clr-accent-4);
+}
+
+.primary-navigation {
+  position: fixed;
+  top: 1.1rem;
+  left: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(0.95rem);
+  display: flex;
+  justify-content: space-between;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12rem;
+  border: none;
+}
+
+.primary-navigation li a {
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 7.5rem;
+  /* max-height: 60vh; */
+  overflow: hidden;
+}
+
+.hero-text {
+  text-align: center;
+  padding: 0;
+}
+
+.green-rect {
+  background-color: var(--clr-accent-3);
+  border-radius: 1.875rem;
+  position: relative;
+  height: 22.625rem;
+}
+
+.green-rect img {
+  width: 16.875rem;
+  margin: auto;
+  position: relative;
+  top: -3rem;
+}
+
+@media (min-width: 50rem) {
+  .hero {
+    gap: 8.75rem;
+  }
+
+  .green-rect img {
+    width: 42.28125rem;
+    top: -3.75rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  .hero {
+    gap: 15rem;
+  }
+  
+  .green-rect img {
+    width: 56.6875rem;
+    top: -8.75rem;
+  }
+}
+
+.lm-button {
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+  padding: 0.875rem 1.375rem;
+  background-color: var(--clr-accent-1);
+  border-radius: 1000px;
+}
+
+.lm-button img {
+  transition: transform 0.2s ease;
+}
+
+.lm-button:hover {
+  background-color: var(--clr-accent-3);
+}
+
+.lm-button:hover img {
+  transform: translateY(-0.25rem);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+
+
+.web-section {
+  transform: translateY(10px);
+  opacity: 0;
+  transition: 0.8s ease;
+}
+
+footer.web-section {
+  transform: none;
+  opacity: 0;
+  transition: 0.8s ease;
+}
+
+.web-section--visible {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+footer.web-section.web-section--visible {
+  opacity: 1;
+}
+
+
+/* utility classes */
+.text-display {
+  font-family: var(--ff-crimson-text);
+  font-size: var(--fs-900);
+  font-weight: var(--fw-regular);
+  line-height: calc(var(--fs-900) * 0.85);
+  letter-spacing: calc(var(--fs-900) * -0.045);
+}
+
+.text-display-statistics {
+  font-family: var(--ff-dm-sans);
+  font-size: var(--fs-800);
+  font-weight: var(--fw-regular);
+  line-height: calc(var(--fs-800) * 1);
+  letter-spacing: calc(var(--fs-800) * -0.04);
+}
+
+.text-heading-1 {
+  font-family: var(--ff-crimson-text);
+  font-size: var(--fs-700);
+  font-weight: var(--fw-regular);
+  line-height: calc(var(--fs-700) * 0.95);
+  letter-spacing: calc(var(--fs-700) * -0.03);
+}
+
+.text-heading-2 {
+  font-family: var(--ff-crimson-text);
+  font-size: var(--fs-500);
+  font-weight: var(--fw-regular);
+  line-height: calc(var(--fs-500) * 1.1);
+  letter-spacing: calc(var(--fs-500) * -0.04);
+}
+
+@media (min-width: 50rem) {
+  .text-display {
+    line-height: calc(var(--fs-900) * 0.80);
+    letter-spacing: calc(var(--fs-900) * -0.05);
+  }
+
+  .text-heading-1 {
+    line-height: calc(var(--fs-700) * 0.90);
+    letter-spacing: calc(var(--fs-700) * -0.03);
+  }
+}
+
+@media (min-width: 80rem) {
+  .text-display {
+    letter-spacing: calc(var(--fs-900) * -0.05);
+  }
+
+  .text-heading-1 {
+    line-height: calc(var(--fs-700) * 0.9);
+  }
+
+  .text-heading-2 {
+    line-height: calc(var(--fs-500) * 1.05);
+  }
+}
+
+.text-heading-3 {
+  font-family: var(--ff-crimson-text);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-regular);
+}
+
+.text-paragraph {
+  font-family: var(--ff-dm-sans);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-regular);
+}
+
+.text-link {
+  font-family: var(--ff-dm-sans);
+  font-size: var(--fs-200);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+  color: var(--clr-link);
+}
+
+.text-caption {
+  font-family: var(--ff-roboto-mono);
+  font-size: var(--fs-100);
+  font-weight: var(--fw-regular);
+}
+
+.bg-neutral-1 {
+  background-color: var(--clr-background-1);
+}
+
+.bg-accent-1 {
+  background-color: var(--clr-accent-1);
+}
+
+.bg-accent-2 {
+  background-color: var(--clr-accent-2);
+}
+
+.bg-accent-3 {
+  background-color: var(--clr-accent-3);
+}
+
+.bg-accent-4 {
+  background-color: var(--clr-accent-4);
+}
+
+.bg-accent-5 {
+  background-color: var(--clr-accent-5);
+}
+
+.bg-accent-6 {
+  background-color: var(--clr-accent-6);
+}
+
+.clr-text-headline {
+  color: var(--clr-headline);
+}
+
+.clr-text-paragraph {
+  color: var(--clr-paragraph);
+}
+
+.clr-text-caption {
+  color: var(--clr-caption);
+}
+
+.clr-text-link {
+  color: var(--clr-link);
+}
+
+.clr-text-on-accent-1 {
+  color: var(--clr-on-accent-1);
+}
+
+.border-divider {
+  border-color: var(--clr-divider);
 }

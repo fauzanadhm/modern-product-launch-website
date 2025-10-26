@@ -11,18 +11,26 @@
     <!-- Header -->
         <header>
             <div class="nav-bar">
-                <h1><a href="#" class="logo">Area</a></h1>
-                <nav class="primary-navigation">
-                    <ul role="list" class="nav-list">
-                        <li><a href="#" class="text-link">Benefits</a></li>
-                        <li><a href="#" class="text-link">Specifications</a></li>
-                        <li><a href="#" class="text-link">How-to</a></li>
-                        <li><a href="#" class="text-link">Contact Us</a></li>
-                    </ul>
-                </nav>
-                <a href="#" class="lm-button text-link clr-text-on-accent-1">
-                    Learn More
-                    <img src="/arrow-up-right.png" alt="arrow"></a>
+                <div class="bar-1">
+                    <h1><a href="#" class="logo">Area</a></h1>
+                    <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                        <span class="visually-hidden">Menu</span>
+                    </button>
+                </div>
+                <div class="bar-2">
+                    <nav class="primary-navigation" id="primary-navigation">
+                        <ul role="list" class="nav-list">
+                            <li><a href="#" class="text-link">Benefits</a></li>
+                            <li><a href="#" class="text-link">Specifications</a></li>
+                            <li><a href="#" class="text-link">How-to</a></li>
+                            <li><a href="#" class="text-link">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                    <a href="#" class="lm-button text-link clr-text-on-accent-1" style="display: noe;">
+                        Learn More
+                        <img src="/arrow-up-right.png" alt="arrow">
+                    </a>
+                </div>
             </div>
         </header>
             
@@ -33,22 +41,25 @@
                     <div class="text-display hero-text">Browse everything.</div>
                     <div class="green-rect">
                         <picture>
-                            <source media="(max-width: 799px)" srcset="/iphone.png">
-                            <img src="/ipad.png" alt="Responsive example">
+                            <source media="(max-width: 799.5px)" srcset="/iphone.png">
+                            <img src="/ipad.png" alt="screenshot">
                         </picture>
                     </div>
                 </div>
             </section>
 
             <!-- Trusting Partner -->
-            <section>
-                <div>
-                    <div><img src="/PartnerLogo1.png" alt="partner's logo"></div>
-                    <div><img src="/PartnerLogo2.png" alt="partner's logo"></div>
-                    <div><img src="/PartnerLogo3.png" alt="partner's logo"></div>
-                    <div><img src="/PartnerLogo4.png" alt="partner's logo"></div>
-                    <div><img src="/PartnerLogo5.png" alt="partner's logo"></div>
-                    <div><img src="/PartnerLogo6.png" alt="partner's logo"></div>
+            <section class="web-section">
+                <div class="partner">
+                    <p class="text-paragraph clr-text-paragraph">Trusted by:</p>
+                    <div  class="partner-list">
+                        <div><img src="/PartnerLogo1.png" alt="partner's logo"></div>
+                        <div><img src="/PartnerLogo2.png" alt="partner's logo"></div>
+                        <div><img src="/PartnerLogo3.png" alt="partner's logo"></div>
+                        <div><img src="/PartnerLogo4.png" alt="partner's logo"></div>
+                        <div><img src="/PartnerLogo5.png" alt="partner's logo"></div>
+                        <div><img src="/PartnerLogo6.png" alt="partner's logo"></div>
+                    </div>
                 </div>
             </section>
 
@@ -279,7 +290,7 @@
             </div>
             <div>
                 <a href="#"><img src="/Logo.png" alt="logo"></a>
-                <p>© Area.   2025</p>
+                <p>© Area.  2025</p>
                 <p>All Rights Reserved</p>
             </div>
         </footer>    

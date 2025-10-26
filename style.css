@@ -508,11 +508,6 @@ footer.web-section.web-section--visible {
   font-size: var(--fs-200);
   font-weight: var(--fw-bold);
   text-decoration: none;
-  color: var(--clr-link);
-}
-
-.text-link:hover, .text-link:active {
-  color: var(--clr-accent-6);
 }
 
 .text-caption {
@@ -563,6 +558,10 @@ footer.web-section.web-section--visible {
 
 .clr-text-link {
   color: var(--clr-link);
+}
+
+.clr-text-link:hover, .clr-text-link:active {
+  color: var(--clr-accent-6);
 }
 
 .clr-text-on-accent-1 {

@@ -1,6 +1,8 @@
 const sections = document.querySelectorAll('.web-section');
 const navToggle = document.querySelector('.mobile-nav-toggle');
 const bar2 = document.querySelector('.bar-2');
+const ours = document.querySelector("#ours");
+const tableHighlight = document.querySelector(".table-highlight");
 
 function isInView(element) {
   const rect = element.getBoundingClientRect();
@@ -32,3 +34,9 @@ navToggle.addEventListener('click', () => {
     : navToggle.setAttribute('aria-expanded', 'true');
   bar2.toggleAttribute('data-visible');
 });
+
+// function updateWidth() {
+//   tableHighlight.style.width = ours.getBoundingClientRect().width + "px";
+// }
+
+// document.addEventListener("resize", updateWidth);

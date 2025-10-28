@@ -89,7 +89,6 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  padding: 0 1rem 1.25rem;
 }
 
 /* A elements that don't have a class get default styles */
@@ -121,6 +120,45 @@ svg {
   }
 }
 
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 2rem 0; */
+}
+
+.web-section {
+  padding: 0 1rem;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: 0.8s ease;
+}
+
+.web-section.no-pad {
+  padding: 0;
+}
+
+@media (min-width: 50rem) {
+  .web-section {
+    padding: 0;
+  }
+}
+
+footer.web-section {
+  transform: none;
+  opacity: 0;
+  transition: 0.8s ease;
+}
+
+.web-section--visible {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+footer.web-section.web-section--visible {
+  opacity: 1;
+}
+
 .whole-wrapper {
   display: flex;
   flex-direction: column;
@@ -134,6 +172,7 @@ header {
 }
 
 header, main, footer {
+  width: 100%;
   max-width: 93.75rem;
 }
 
@@ -169,13 +208,9 @@ header, main, footer {
   display: none;
 }
 
-main {
-  padding: 0 1rem;
-}
-
 @media (min-width: 50rem) {
   body {
-    padding: 0 2.5rem 2.5rem;
+    padding: 0 2.5rem;
   }
 
   header {
@@ -363,40 +398,12 @@ main {
   transform: translateY(-0.25rem);
 }
 
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem 0;
-}
-
-.web-section {
-  transform: translateY(10px);
-  opacity: 0;
-  transition: 0.8s ease;
-}
-
-footer.web-section {
-  transform: none;
-  opacity: 0;
-  transition: 0.8s ease;
-}
-
-.web-section--visible {
-  transform: translateY(0px);
-  opacity: 1;
-}
-
-footer.web-section.web-section--visible {
-  opacity: 1;
-}
-
 .partner-container {
   display: flex;
   flex-direction: column;
   /* align-items: center; */
   gap: 1.875rem;
-  padding: 3.125rem 0;
+  padding: 3.125rem 1rem;
 }
 
 .partner-list {
@@ -428,8 +435,9 @@ footer.web-section.web-section--visible {
 .benefit-container {
   display: flex;
   flex-direction: column;
-  padding: 0 0 7.5rem;
+  padding: 5rem 0 6.25rem;
   gap: 3.125rem;
+  border-top: 1px solid var(--clr-divider);
 }
 
 .benefit-content {
@@ -482,10 +490,14 @@ footer.web-section.web-section--visible {
 }
 
 @media (min-width: 50rem) {
+  .benefit-container {
+    padding-bottom: 7.5rem;
+  }
+
   .benefit-narration {
     gap: 3.125rem;
   }
-
+  
   .benefit-list {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -500,7 +512,7 @@ footer.web-section.web-section--visible {
 .product-value-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  padding: 0 0 5rem;
+  padding: 0 2rem 5rem;
 }
 
 .product-value-content {
@@ -535,6 +547,7 @@ footer.web-section.web-section--visible {
 .product-value-image {
   border-radius: 1.875rem;
   overflow: hidden;
+  height: 24.0625rem;
 }
 
 .product-value-image img {
@@ -547,10 +560,15 @@ footer.web-section.web-section--visible {
 @media (min-width: 50rem) {
   .product-value-container {
     gap: -0.75rem;
+    padding: 0 0 5rem;
   }
-
+  
   .product-value-item {
     padding: 1.25rem 5rem 1.25rem 0;
+  }
+
+  .product-value-image {
+    height: 46.5rem;
   }
 }
 
@@ -559,13 +577,17 @@ footer.web-section.web-section--visible {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
   }
+
+  .product-value-image {
+    height: auto;
+  }
 }
 
 .feature-container {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  padding: 0 0 7.5rem;
+  padding-bottom: 7.5rem;
   border-top: var(--clr-accent-6) 1.5px solid;
 }
 
@@ -574,7 +596,7 @@ footer.web-section.web-section--visible {
   flex-direction: column;
   align-items: center;
   gap: 1.875rem;
-  padding: 5rem 0;
+  padding: 5rem 1rem;
 }
 
 .feature-narration p {
@@ -582,11 +604,10 @@ footer.web-section.web-section--visible {
 }
 
 .feature-table-container {
-  width: calc(100vw - 2rem);
-  max-width: 100%;
+  width: 100%;
   overflow: auto;
   position: relative;
-  padding: 0.125rem;
+  padding-left: 0.5rem;
   border-radius: 1.25rem;
 }
 
@@ -659,7 +680,7 @@ footer.web-section.web-section--visible {
   }
 
   .feature-table-container {
-    width: calc(100vw - 5rem);
+    width: 100%;
     overflow: auto;
   }
 
@@ -766,7 +787,7 @@ footer.web-section.web-section--visible {
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  padding: 5rem 0 7.5rem;
+  padding: 5rem 1rem 7.5rem;
 }
 
 .guide-narration {
@@ -801,6 +822,11 @@ footer.web-section.web-section--visible {
 }
 
 @media (min-width: 50rem) {
+  .guide-container {
+    padding: 5rem 0 7.5rem;
+    
+  }
+
   .guide-narration {
     flex-direction: row;
     justify-content: space-between;
@@ -838,7 +864,8 @@ footer.web-section.web-section--visible {
   justify-content: center;
   align-items: center;
   gap: 2.5rem;
-  padding: 7.5rem 0;
+  padding: 7.5rem 1rem;
+  border-top: 1px solid var(--clr-divider);
 }
 
 .cta-container p {
@@ -860,6 +887,50 @@ footer.web-section.web-section--visible {
     padding: 7.5rem 18.75rem;
   }
 }
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  border-top: 1px solid var(--clr-divider);
+  width: 100%;
+  padding: 2.5rem 1rem 1.25rem;
+}
+
+.footer-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.6875rem;
+}
+
+.footer-mark {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2.5rem;
+}
+
+.footer-mark a img {
+  display: block;
+  height: 4.375rem;
+}
+
+.footer-mark :nth-child(2) {
+  flex-grow: 1;
+  display: flex;
+  gap: 1rem;
+}
+
+@media (min-width: 50rem) {
+  .footer-navigation {
+    min-height: 2.5rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.6875rem;
+  }
+}
+
 /* utility classes */
 .visually-hidden {
   position: absolute;

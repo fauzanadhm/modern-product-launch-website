@@ -34,9 +34,3 @@ navToggle.addEventListener('click', () => {
     : navToggle.setAttribute('aria-expanded', 'true');
   bar2.toggleAttribute('data-visible');
 });
-
-// function updateWidth() {
-//   tableHighlight.style.width = ours.getBoundingClientRect().width + "px";
-// }
-
-// document.addEventListener("resize", updateWidth);

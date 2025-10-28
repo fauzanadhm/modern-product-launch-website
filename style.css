@@ -133,7 +133,7 @@ header {
   position: relative;
 }
 
-.nav-bar, main, footer {
+header, main, footer {
   max-width: 93.75rem;
 }
 

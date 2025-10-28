@@ -315,11 +315,11 @@ header, main, footer {
     border: 0;
     width: 1.125rem;
     padding: 0.5rem;
-    background: center / contain no-repeat url("./public/hamburger.png");;
+    background: center / contain no-repeat url(public/hamburger.png);
   }
 
   .mobile-nav-toggle[aria-expanded="true"] {
-    background-image: url("./public/cross.svg");
+    background-image: url(public/cross.svg);
   }
 
   main {

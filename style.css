@@ -1103,7 +1103,7 @@ header, main, footer {
 }
 
 .clr-text-link:hover, .clr-text-link:active {
-  color: var(--clr-on-accent-1);
+  color: var(--clr-accent-6);
 }
 
 .clr-text-on-accent-1 {

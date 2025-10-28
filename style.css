@@ -735,6 +735,7 @@ footer.web-section.web-section--visible {
   .testimony-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
+    align-items: start;
     height: 49.375rem;
   }
   
@@ -744,12 +745,18 @@ footer.web-section.web-section--visible {
   }
 
   .testimony-image {
-    aspect-ratio: initial;
-    height: 100%;
+    width: 100%;
+    aspect-ratio: 88 / 100;
+    max-height: 100%;
   }
 
   .testimony-image img {
     object-fit: cover;
+  }
+
+  .testimony-profile {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 

@@ -41,5 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
 navToggle.addEventListener('click', toggleNavigationVisibility);
 
 navs.forEach((nav) => {
-  nav.addEventListener('click', toggleNavigationVisibility);
+  nav.addEventListener('click', () => {
+    bar2.hasAttribute('data-visible')
+    ? navToggle.setAttribute('aria-expanded', 'false')
+    : navToggle.setAttribute('aria-expanded', 'true');
+    bar2.removeAttribute('data-visible');
+  });
 })
